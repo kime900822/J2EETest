@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>webdemo</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+  <servlet>
+    <servlet-name>ViewDictionary</servlet-name>
+    <servlet-class>kime.test1.ViewDictionary</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewDictionary</servlet-name>
+    <url-pattern>/servlet/ViewDictionary</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>TestDoget</servlet-name>
+    <servlet-class>kime.test1.TestDoget</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestDoget</servlet-name>
+    <url-pattern>/servlet/TestDoget</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>ShowImage</servlet-name>
+    <servlet-class>kime.test1.ShowImage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowImage</servlet-name>
+    <url-pattern>/servlet/ShowImage</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>SaveCookie</servlet-name>
+    <servlet-class>kime.test1.SaveCookie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SaveCookie</servlet-name>
+    <url-pattern>/servlet/SaveCookie</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>ReadCookie</servlet-name>
+    <servlet-class>kime.test1.ReadCookie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReadCookie</servlet-name>
+    <url-pattern>/servlet/ReadCookie</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>SaveComplexCookie</servlet-name>
+    <servlet-class>kime.test1.SaveComplexCookie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SaveComplexCookie</servlet-name>
+    <url-pattern>/servlet/SaveComplexCookie</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <servlet>
+    <servlet-name>ReadComplexCookie</servlet-name>
+    <servlet-class>kime.test1.ReadComplexCookie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReadComplexCookie</servlet-name>
+    <url-pattern>/servlet/ReadComplexCookie</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>SessionServlet</servlet-name>
+    <servlet-class>kime.test1.SessionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionServlet</servlet-name>
+    <url-pattern>/servlet/SessionServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>NewSession</servlet-name>
+    <servlet-class>kime.test1.NewSession</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewSession</servlet-name>
+    <url-pattern>/servlet/NewSession</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>ValidationCode</servlet-name>
+    <servlet-class>kime.login.ValidationCode</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ValidationCode</servlet-name>
+    <url-pattern>/servlet/validation_code</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>Register</servlet-name>
+    <servlet-class>kime.login.Register</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Register</servlet-name>
+    <url-pattern>/servlet/register</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>kime.login.Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/servlet/login</url-pattern>
+  </servlet-mapping>
+
+
+
+
+ <jsp-config>
+ 	<taglib>
+ 		<taglib-uri>myelfun</taglib-uri>
+ 		<taglib-location>/WEB-INF/tld/elfun.tld</taglib-location>
+ 	</taglib>
+ </jsp-config>
+
+
+  
+  <resource-ref>
+    <description>sqlserver数据库连接池</description>
+    <res-ref-name>jdbc/webdb</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+    <res-sharing-scope>Shareable</res-sharing-scope>
+  </resource-ref>
+</web-app>

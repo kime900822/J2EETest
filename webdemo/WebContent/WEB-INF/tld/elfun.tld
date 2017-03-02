@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_1.xsd"
+    version="2.1">
+    <description>用于特殊字符转换</description>
+    <tlib-version>1.0</tlib-version>
+	<uri>myelfun</uri>
+	<function>
+		<name>ps</name>
+		<!-- 指定EL函数所在的类 -->
+		<function-class>chapter5.ELFun</function-class>
+		<function-signature>
+			<!-- 指定EL函数名 -->
+			java.lang.String processStr(java.lang.String)
+		</function-signature>
+	</function>
+
+</taglib>
