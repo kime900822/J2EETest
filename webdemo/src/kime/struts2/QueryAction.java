@@ -24,7 +24,8 @@ public class QueryAction {
 		try {
 			BookDAO book=new BookDAO();
 			
-			Map<String, Integer> books=book.getBooks(name);
+			//Map<String, Integer> books=book.getBooks(name);
+			Map<String, Integer> books=book.getBooksBySql(name);			
 			setResult(books);
 			return "success";
 		} catch (Exception e) {
