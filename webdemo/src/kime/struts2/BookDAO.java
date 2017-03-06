@@ -37,18 +37,25 @@ public class BookDAO {
 			Map<String, Integer> books=new LinkedHashMap<String,Integer>();
 		try {
 			javax.naming.Context ctx=new javax.naming.InitialContext();
-			javax.sql.DataSource ds=(javax.sql.DataSource) ctx.lookup("java:/comp/evn/jdbc/webdb");
+			javax.sql.DataSource ds=(javax.sql.DataSource) ctx.lookup("java:/comp/env/jdbc/webdb");
 		    conn=ds.getConnection();
-			PreparedStatement statement=conn.prepareStatement("select * from t_books where lower(name)=?");
-			statement.setString(0, name.trim().toLowerCase());
+		    PreparedStatement statement=null;
+		    if (name=="") {
+				statement=conn.prepareStatement("select * from t_book ");
+
+			}else{
+				statement=conn.prepareStatement("select * from t_book where lower(book_name) like (?)");
+				statement.setString(1, "%"+name.trim().toLowerCase()+"%");
+			}
 			ResultSet set= statement.executeQuery();
 
 			while(set.next()){
-				books.put(set.getString(0), set.getInt(1));				
+				books.put(set.getString(2), set.getInt(3));				
 			}
 			
 			
 		} catch (Exception e) {
+			e.printStackTrace();
 			// TODO: handle exception
 		}
 		finally {
