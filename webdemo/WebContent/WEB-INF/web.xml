@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
   <display-name>webdemo</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
@@ -9,8 +9,6 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
-  
   <servlet>
     <servlet-name>ViewDictionary</servlet-name>
     <servlet-class>kime.test1.ViewDictionary</servlet-class>
@@ -19,8 +17,6 @@
     <servlet-name>ViewDictionary</servlet-name>
     <url-pattern>/servlet/ViewDictionary</url-pattern>
   </servlet-mapping>
-  
-  
   <servlet>
     <servlet-name>TestDoget</servlet-name>
     <servlet-class>kime.test1.TestDoget</servlet-class>
@@ -29,8 +25,6 @@
     <servlet-name>TestDoget</servlet-name>
     <url-pattern>/servlet/TestDoget</url-pattern>
   </servlet-mapping>
-  
-  
   <servlet>
     <servlet-name>ShowImage</servlet-name>
     <servlet-class>kime.test1.ShowImage</servlet-class>
@@ -39,8 +33,6 @@
     <servlet-name>ShowImage</servlet-name>
     <url-pattern>/servlet/ShowImage</url-pattern>
   </servlet-mapping>
-  
-  
   <servlet>
     <servlet-name>SaveCookie</servlet-name>
     <servlet-class>kime.test1.SaveCookie</servlet-class>
@@ -49,8 +41,7 @@
     <servlet-name>SaveCookie</servlet-name>
     <url-pattern>/servlet/SaveCookie</url-pattern>
   </servlet-mapping>
-  
-    <servlet>
+  <servlet>
     <servlet-name>ReadCookie</servlet-name>
     <servlet-class>kime.test1.ReadCookie</servlet-class>
   </servlet>
@@ -58,7 +49,6 @@
     <servlet-name>ReadCookie</servlet-name>
     <url-pattern>/servlet/ReadCookie</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>SaveComplexCookie</servlet-name>
     <servlet-class>kime.test1.SaveComplexCookie</servlet-class>
@@ -67,9 +57,6 @@
     <servlet-name>SaveComplexCookie</servlet-name>
     <url-pattern>/servlet/SaveComplexCookie</url-pattern>
   </servlet-mapping>
-  
-  
-  
   <servlet>
     <servlet-name>ReadComplexCookie</servlet-name>
     <servlet-class>kime.test1.ReadComplexCookie</servlet-class>
@@ -78,7 +65,6 @@
     <servlet-name>ReadComplexCookie</servlet-name>
     <url-pattern>/servlet/ReadComplexCookie</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>SessionServlet</servlet-name>
     <servlet-class>kime.test1.SessionServlet</servlet-class>
@@ -87,8 +73,6 @@
     <servlet-name>SessionServlet</servlet-name>
     <url-pattern>/servlet/SessionServlet</url-pattern>
   </servlet-mapping>
-  
-  
   <servlet>
     <servlet-name>NewSession</servlet-name>
     <servlet-class>kime.test1.NewSession</servlet-class>
@@ -97,8 +81,6 @@
     <servlet-name>NewSession</servlet-name>
     <url-pattern>/servlet/NewSession</url-pattern>
   </servlet-mapping>
-
-
   <servlet>
     <servlet-name>ValidationCode</servlet-name>
     <servlet-class>kime.login.ValidationCode</servlet-class>
@@ -107,8 +89,6 @@
     <servlet-name>ValidationCode</servlet-name>
     <url-pattern>/servlet/validation_code</url-pattern>
   </servlet-mapping>
-
-
   <servlet>
     <servlet-name>Register</servlet-name>
     <servlet-class>kime.login.Register</servlet-class>
@@ -117,7 +97,6 @@
     <servlet-name>Register</servlet-name>
     <url-pattern>/servlet/register</url-pattern>
   </servlet-mapping>
-
   <servlet>
     <servlet-name>Login</servlet-name>
     <servlet-class>kime.login.Login</servlet-class>
@@ -126,29 +105,20 @@
     <servlet-name>Login</servlet-name>
     <url-pattern>/servlet/login</url-pattern>
   </servlet-mapping>
-
-
-
-<!-- EL调用静态方法 -->
- <jsp-config>
- 	<taglib>
- 		<taglib-uri>myelfun</taglib-uri>
- 		<taglib-location>/WEB-INF/tld/elfun.tld</taglib-location>
- 	</taglib>
- </jsp-config>
-
-<!-- Struts2过滤器的类名 -->
+  <jsp-config>
+    <taglib>
+      <taglib-uri>myelfun</taglib-uri>
+      <taglib-location>/WEB-INF/tld/elfun.tld</taglib-location>
+    </taglib>
+  </jsp-config>
   <filter>
-  	<filter-name>struts2</filter-name>
-  	<filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
+    <filter-name>struts2</filter-name>
+    <filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
   </filter>
   <filter-mapping>
-  	<filter-name>struts2</filter-name>
-  	<url-pattern>/struts2/*</url-pattern>
+    <filter-name>struts2</filter-name>
+    <url-pattern>/struts2/*</url-pattern>
   </filter-mapping>
-  
-  
-<!-- 数据库连接池 -->
   <resource-ref>
     <description>sqlserver数据库连接池</description>
     <res-ref-name>jdbc/webdb</res-ref-name>
