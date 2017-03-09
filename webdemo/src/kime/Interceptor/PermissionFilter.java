@@ -17,7 +17,7 @@ import org.apache.coyote.http11.Http11AprProtocol;
 /**
  * Servlet Filter implementation class PermissionFilter
  */
-@WebFilter(filterName="/PermissionFilter",urlPatterns="/*")
+@WebFilter(filterName="/PermissionFilter",urlPatterns="/Interceptor/*")
 public class PermissionFilter implements Filter {
 
     /**

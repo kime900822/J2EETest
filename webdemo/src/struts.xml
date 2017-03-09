@@ -24,6 +24,11 @@
 			<result name="success">/struts2/result.jsp</result>
 			<result name="error">/struts2/error.jsp</result>
 		</action>	
+		
+		<action name="login" class="kime.struts2.LoginAction">
+			<result name="success">/struts2/success.jsp</result>
+			<result name="error">/struts2/error.jsp</result>
+		</action>
 	</package>
 </struts>
 
