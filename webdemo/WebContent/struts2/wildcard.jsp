@@ -5,16 +5,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>用户登录</title>
+<title>Struts2通配符</title>
 </head>
 <body>
-<s:form action="login">
-	<s:textfield label="用户" name="username"/>
-	<s:textfield label="密码" name="password"/>
-	<s:submit value="登录"/>
-	<s:submit value="查询图书" action="login!queryBooks"></s:submit>
-	
-</s:form>
-<s:a action="login!queryBooks">查询图书</s:a>
+<s:a action="queryBooks">查询</s:a><br>
+<s:a action="addBooks">成功</s:a><br>
+<s:a action="editBooks">失败</s:a><br>
+<s:a action="dwdwdkla">测试默认acton</s:a>
 </body>
 </html>

@@ -7,6 +7,8 @@ import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
 import com.sun.xml.internal.ws.api.model.wsdl.editable.EditableWSDLService;
 
+import kime.login.Register;
+
 public class LoginAction implements Action {
 	
 	private String username;
@@ -42,6 +44,11 @@ public class LoginAction implements Action {
 		users.put("mike", "4321");				
 	}
 	
+	//处理注册的方法
+	public String queryBooks() throws Exception{
+		return "queryBooks";
+		
+	}
 
 	@Override
 	public String execute() throws Exception {
