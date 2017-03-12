@@ -50,7 +50,12 @@
 			<result name="query">/struts2/queryBooks.jsp</result>
 			<result name="edit">/struts2/success.jsp</result>
 		</action>
-	
+
+		<action name="logiOfModel" class="kime.struts2.LoginOfModelAction">
+			<result name="success">/struts2/success.jsp</result>
+			<result name="error">/struts2/error.jsp</result>
+		</action>
+
 	</package>
 </struts>
 
