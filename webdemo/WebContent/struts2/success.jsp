@@ -10,7 +10,8 @@
 <body>
 	
 	<!-- Model返回值 -->
-	model返回值：<s:property value="model.result"/>  
+	model返回值：<s:property value="model.result"/> <br>
+	${requestScope.model.result }
 	     <br>
 	<!--  -->
 	本站访问次数：${applicationScope.counter}</p>

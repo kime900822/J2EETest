@@ -22,6 +22,17 @@
 	<!-- 默认视觉主题 -->
 	<constant name="struts.ui.theme" value="simple" />
 	<package name="Struts 2" extends="struts-default">
+		<interceptors>
+			<interceptor name="executeTime" class="interceptor.ExecuteTimeInterceptor">
+				<param name="name">执行时间</param>
+			</interceptor>
+			<interceptor-stack name="customStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="executeTime"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 配置默认拦截器 -->
+		<default-interceptor-ref name="customStack"></default-interceptor-ref>
 		<!-- 配置默认action -->
 		<default-action-ref name="login"></default-action-ref>
 		<!-- 允许通配符配置 -->
@@ -51,11 +62,17 @@
 			<result name="edit">/struts2/success.jsp</result>
 		</action>
 
-		<action name="logiOfModel" class="kime.struts2.LoginOfModelAction">
+		<action name="loginOfModel" class="kime.struts2.LoginOfModelAction">			
 			<result name="success">/struts2/success.jsp</result>
 			<result name="error">/struts2/error.jsp</result>
 		</action>
-
+		
+		<!-- 类型转换 -->
+		<action name="product" class="kime.struts2.ProductAction">			
+			<result name="success">/struts2/productview.jsp</result>
+		</action>
+		
+		
 	</package>
 </struts>
 
