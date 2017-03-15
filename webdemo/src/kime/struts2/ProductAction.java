@@ -6,15 +6,27 @@ public class ProductAction implements Action{
 
 	private Product product1;
 	private Product product2;
+	public Product[] getProducts() {
+		return products;
+	}
+
+
+
+	public void setProducts(Product[] products) {
+		this.products = products;
+	}
+
+
+
+	private Product[] products;
 	
-	
-	public Product getProduct() {
+	public Product getProduct1() {
 		return product1;
 	}
 
 
 
-	public void setProduct(Product product1) {
+	public void setProduct1(Product product1) {
 		this.product1 = product1;
 	}
 

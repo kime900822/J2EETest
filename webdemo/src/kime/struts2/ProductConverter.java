@@ -5,6 +5,7 @@ import java.util.Map;
 
 import ognl.DefaultTypeConverter;
 
+//继承DefaultTypeConverter的类型转换
 public class ProductConverter extends DefaultTypeConverter {
 
 	@Override

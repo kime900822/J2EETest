@@ -11,10 +11,15 @@
 
 <s:form action="product">
 	<s:textfield label="请输入产品信息" name="product1"/>
-	<s:textfield label="请输入产品信息" name="product2"/>
+	<s:textfield label="请输入产品信息" name="product2"/><p>
+	<s:textfield label="请输入产品信息" name="products"/>
+	<s:textfield label="请输入产品信息" name="products" />
+	<s:textfield label="请输入产品信息" name="products" />
 	<s:submit value="提交"></s:submit>
-
+	
 </s:form>
+
+
 
 </body>
 </html>

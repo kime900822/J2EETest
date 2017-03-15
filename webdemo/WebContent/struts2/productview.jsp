@@ -14,7 +14,12 @@
 	<s:property value="product2.name"/><p/>
 	<s:property value="product2.price"/><p/>
 	<s:property value="product2.count"/><p/>
-
+	<s:iterator  var="product" status="i" value="products">
+		产品数组[${i.index}]<p>
+		名称：${product.name}&nbsp;&nbsp;
+		价格：${product.price}&nbsp;&nbsp;
+		数量：${product.count}&nbsp;&nbsp;<p>
+	</s:iterator>
 
 </body>
 </html>
