@@ -19,8 +19,8 @@
 	<constant name="struts.devMode" value="true" />
 	<!-- 开启动态方法调用 -->
 	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
-	<!-- 默认视觉主题 -->
-	<constant name="struts.ui.theme" value="simple" />
+	<!-- 默认视觉主题 这个配置之后label什么都不会显示-->
+	<!-- <constant name="struts.ui.theme" value="simple" /> -->
 	<package name="Struts 2" extends="struts-default">
 		<interceptors>
 			<interceptor name="executeTime" class="interceptor.ExecuteTimeInterceptor">
@@ -70,6 +70,15 @@
 		<!-- 类型转换 -->
 		<action name="product" class="kime.struts2.ProductAction">			
 			<result name="success">/struts2/productview.jsp</result>
+		</action>
+
+		<!-- 输入校验 -->
+		<action name="register" class="kime.struts2.RegisterAction" method="register">			
+			<result name="success">/struts2/success.jsp</result>
+			<!-- 直接在每个UI上方显示 -->
+			<!--<result name="input">/struts2/register_Struts2.jsp</result>-->
+			<!-- 新页面显示 -->
+			<result name="input">/struts2/input.jsp</result>
 		</action>
 		
 		
