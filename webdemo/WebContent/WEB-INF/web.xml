@@ -105,6 +105,22 @@
     <servlet-name>Login</servlet-name>
     <url-pattern>/servlet/login</url-pattern>
   </servlet-mapping>
+  <!-- 上传 -->
+  <servlet>
+  	<servlet-name>UploadServlet</servlet-name>
+  	<servlet-class>kime.struts2.UploadServlet</servlet-class>
+  	<!-- 配置用于保存上传文件的路径 -->
+  	<init-param>
+  		<param-name>path</param-name>
+  		<param-value>/Users/kime/</param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>UploadServlet</servlet-name>
+  	<url-pattern>/struts2/UploadServlet</url-pattern>
+  </servlet-mapping>
+  
+  
   <jsp-config>
     <taglib>
       <taglib-uri>myelfun</taglib-uri>
