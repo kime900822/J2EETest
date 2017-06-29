@@ -24,7 +24,7 @@
 			<td><s:property value="#product.name"/></td>
 			<td><s:property value="#product.price"/></td>
 			<td><a href="delete.action?id=<s:property value='#product.id'/> ">删除</a></td>
-			<td><a href="update.jsp?id=<s:property value='#product.id'/> ">更新</a></td>
+			<td><a href="jsp/update.jsp?id=<s:property value='#product.id'/>&name=<s:property value='#product.name'/>&price=<s:property value='#product.price'/> ">更新</a></td>
 		</tr>
 		</s:iterator>
 	</table>

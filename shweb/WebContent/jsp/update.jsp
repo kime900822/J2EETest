@@ -10,10 +10,12 @@
 <body>
 <center>
 	<s:form action="update">
-		<s:set var="id" value="#parammeters.id[0]"></s:set>
-		<s:textfield lable="产品ID" name="id"></s:textfield>
-		<s:textfield lable="产品名" name="name"></s:textfield>
-		<s:textfield lable="产品价格" name="price"></s:textfield>
+		<s:set var="id" value="#parameters.id"></s:set>
+		<s:set var="name" value="#parameters.name"></s:set>
+		<s:set var="price" value="#parameters.price"></s:set>
+		<s:textfield label="产品ID" name="id"></s:textfield>
+		<s:textfield label="产品名" name="name"></s:textfield>
+		<s:textfield label="产品价格" name="price"></s:textfield>
 		<s:submit value="更新"></s:submit>
 		<s:reset value="重置"></s:reset>
 	</s:form>
