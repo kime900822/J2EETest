@@ -17,7 +17,7 @@ public class ProductServiceImpl implements ProductService {
 		if (dao.queryByID(p.getId())==null) {
 			dao.save(p);
 		}else{
-			System.out.println("idÒÑ¾­´æÔÚ");
+			System.out.println("idå·²å­˜åœ¨");
 		}
 	}
 
@@ -26,9 +26,9 @@ public class ProductServiceImpl implements ProductService {
 
 		ProductDao dao=DaoFactory.getDaoInstance();
 		if (dao.queryByID(id)==null) {
-			dao.delete(id);
+			System.out.println("idä¸å­˜åœ¨");
 		}else{
-			System.out.println("id²»´æÔÚ");
+			dao.delete(id);	
 		}
 	}
 
@@ -36,9 +36,9 @@ public class ProductServiceImpl implements ProductService {
 	public void updateProduct(Product p) {
 		ProductDao dao=DaoFactory.getDaoInstance();
 		if (dao.queryByID(p.getId())==null) {
-			dao.update(p);
+			System.out.println("idä¸å­˜åœ¨");
 		}else{
-			System.out.println("id²»´æÔÚ");
+			dao.update(p);
 		}
 		
 	}
