@@ -27,9 +27,17 @@
 		<action name="showAll" class="showAllAction">
 			<result name="success" >/jsp/showAll.jsp</result>
 		</action>
+		
 		<action name="showUser" class="showUserAction">
 			<result name="success" >/jsp/showUser.jsp</result>
 		</action>
+		
+		<action name="addUser" class="addUserAction">
+			<result name="success" >/showAll.action</result>
+			<result name="error">/jsp/add.jsp</result>
+			<result name="input">/jsp/add.jsp</result>
+		</action>
+		
 	</package>
 </struts>
 

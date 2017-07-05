@@ -10,7 +10,7 @@
 <body>
 <center>
 	<h2>添加用户</h2>
-	<s:form action="add">
+	<s:form action="add" validate="true">
 		<s:actionerror/>
 		<s:textfield label="用户名" name="username"></s:textfield>
 		<s:textfield label="密码" name="password"></s:textfield>
