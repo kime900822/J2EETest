@@ -20,7 +20,7 @@
 		</tr>
 		<s:iterator value="#request.all" var="user">
 		<tr>
-			<td><s:property value="#user.id"/></td>
+			<td><a href="showUser.action?id=<s:property value='#user.id'/> "><s:property value='#user.id'/></a></td>
 			<td><s:property value="#user.username"/></td>
 			<td><s:property value="#user.password"/></td>
 			<td><a href="delete.action?id=<s:property value='#user.id'/> ">删除</a></td>

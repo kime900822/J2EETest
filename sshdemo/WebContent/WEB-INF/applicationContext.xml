@@ -79,5 +79,10 @@
 	</property>
 </bean>
 
+<bean id="showUserAction" class="kime.sshdemo.action.ShowUserAction">
+	<property name="userService">
+		<ref bean="userService" />
+	</property>
+</bean>
 
 </beans>
