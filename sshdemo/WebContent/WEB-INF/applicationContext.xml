@@ -5,7 +5,7 @@
     xmlns:p="http://www.springframework.org/schema/p"  
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
 
-<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+<!--<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 	<property name="driverClassName">
 		<value>com.microsoft.sqlserver.jdbc.SQLServerDriver</value>
 	</property>
@@ -18,10 +18,26 @@
 	<property name="password">
 		<value>zzh900822</value>
 	</property>
+</bean>  -->
+
+<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<property name="driverClassName">
+		<value>com.mysql.jdbc.Driver</value>
+	</property>
+	<property name="url">
+		<value>jdbc:mysql://localhost/test?characterEncoding=gb2312</value>
+	</property>
+	<property name="username">
+		<value>root</value>
+	</property>
+	<property name="password">
+		<value>root</value>
+	</property>
 </bean>
 
+
 <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
-	 <property name="datasource">
+	 <property name="dataSource">
 	 	<ref bean="dataSource"/>
 	 </property>
 	 <property name="hibernateProperties">
@@ -34,6 +50,33 @@
 	 		<value>kime/sshdemo/po/User.hbm.xml</value>
 	 	</list>
 	 </property>
+</bean>
+
+<!-- 配置 HibernateTemplate-->
+<bean id="HibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
+	<property name="sessionFactory">
+		<ref bean="sessionFactory"/>
+	</property>
+</bean>
+
+<!-- 配置DAO组件 -->
+<bean id="userDAO" class="kime.sshdemo.dao.UserDaoImpl">
+	<property name="HibernateTemplate">
+		<ref bean="HibernateTemplate"/>
+	</property>
+</bean>
+
+<bean id="userService" class="kime.sshdemo.service.UserServiceImpl">
+	<property name="userDao">
+		<ref bean="userDAO"/>
+	</property>
+</bean>
+
+
+<bean id="showAllAction" class="kime.sshdemo.action.ShowAllAction">
+	<property name="userService">
+		<ref bean="userService" />
+	</property>
 </bean>
 
 
