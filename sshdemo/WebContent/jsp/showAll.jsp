@@ -28,7 +28,7 @@
 		</tr>
 		</s:iterator>
 	</table>
-	<a href="jsp/add.jsp">添加产品</a>
+	<a href="jsp/add.jsp">添加用户</a>
 </center>
 </body>
 </html>
