@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 为这个mapper指定一个唯一的namespace，namespace的值习惯上设置成包名+sql映射文件名，这样就能够保证namespace的值是唯一的
+例如namespace="me.gacl.mapping.orderMapper"就是me.gacl.mapping(包名)+orderMapper(orderMapper.xml文件去除后缀)
+-->
+<mapper namespace="kime.mybatis.mapping.orderMapper">
+
+	<!-- 根据id查询得到一个order对象，必须实体名和数据库中字段名一致 -->
+	<select id="getOrderById" parameterType="int" 
+		resultType="kime.mybatis.po.Order">
+		select * from orders where order_id=#{id}
+	</select>
+	
+	<!-- 通过使用别名使字段名和属性名对应 -->
+	<select id="selectOrder" parameterType="int" 
+		resultType="kime.mybatis.po.Order">
+		select order_id id, order_no orderNo,order_price price from orders where order_id=#{id}
+	</select>
+	
+	<select id="selectOrderResultMap" parameterType="int" resultMap="orderResultMap">
+		select * from orders where order_id=#{id}
+	</select>
+	<!--通过<resultMap>映射实体类属性名和表的字段名对应关系 -->
+	<resultMap type="kime.mybatis.po.Order" id="orderResultMap">
+		<!-- 用id属性来映射主键字段 -->
+		<id property="id" column="order_id"/>
+		<!-- 用result属性来映射非主键字段 -->
+		<result property="orderNo" column="order_no"/>
+		<result property="price" column="order_price"/>
+	</resultMap>
+</mapper>
